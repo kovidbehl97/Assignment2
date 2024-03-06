@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/data", (req, res) => {
-    res.render("data", { title: "Data", jsonData });
+    res.render("data", { title: "Data", jsonData: jsonData });
 });
 
 app.get("/data/product/:index", (req, res) => {
