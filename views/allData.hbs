@@ -12,7 +12,7 @@
   <tbody>
     {{#each products}}
       
-        <tr {{#unless this.reviews}} class="highlighted"{{/unless}}>
+        <tr class={{#unless this.reviews}}highlighted{{/unless}}>
           <td>{{this.asin}}</td>
           <td>{{this.title}}</td>
           <td>{{noReviews this.reviews}}</td>
