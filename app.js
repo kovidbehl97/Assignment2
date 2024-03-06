@@ -7,12 +7,21 @@ const fs = require("fs");
 const app = express();
 const port = process.env.PORT || 3000;
 
-
 // Set up static files
 app.use(express.static(path.join(__dirname, "public")));
 
 // Set up handlebars as the view engine
-app.engine(".hbs", exphbs.engine({ extname: ".hbs" }));
+app.engine(
+    ".hbs",
+    exphbs.engine({
+        extname: ".hbs",
+        helpers: {
+            noReviews: function (reviews) {
+                return reviews !== "" ? reviews : "N/A";
+            },
+        },
+    })
+);
 app.set("view engine", ".hbs");
 
 // Body parser middleware

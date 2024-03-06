@@ -11,14 +11,14 @@
   </thead>
   <tbody>
     {{#each products}}
-      {{#if reviews}}
-        <tr>
-          <td>{{asin}}</td>
-          <td>{{title}}</td>
-          <td>{{reviews}}</td>
+      
+        <tr {{#unless this.reviews}} class="highlighted"{{/unless}}>
+          <td>{{this.asin}}</td>
+          <td>{{this.title}}</td>
+          <td>{{noReviews this.reviews}}</td>
           <!-- Add more columns as needed -->
         </tr>
-      {{/if}}
+     
     {{/each}}
   </tbody>
 </table>
