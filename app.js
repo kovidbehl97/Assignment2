@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
 const fs = require("fs");
@@ -8,6 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors);
 // Set up static files
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -98,7 +100,10 @@ app.post("/data/search/prdName", (req, res) => {
 });
 
 app.get("/allData", (req, res) => {
-    res.render("allData", { title: "All Products", products: jsonData });
+    res.render("allData", {
+        title: "All Products",
+        products: JSON.parse(jsonData),
+    });
 });
 
 // Catch all route for undefined routes
