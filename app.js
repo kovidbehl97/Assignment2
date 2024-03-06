@@ -100,7 +100,7 @@ app.post("/data/search/prdName", (req, res) => {
 app.get("/allData", (req, res) => {
     res.render("allData", {
         title: "All Products",
-        products: JSON.parse(jsonData),
+        products: jsonData,
     });
 });
 
