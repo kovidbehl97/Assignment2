@@ -6,7 +6,8 @@ const fs = require("fs");
 
 const app = express();
 const port = process.env.PORT || 3000;
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 // Set up static files
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -25,8 +26,6 @@ app.engine(
 app.set("view engine", ".hbs");
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 // Load JSON data
 const jsonDataPath = path.join(__dirname, "data.json");
