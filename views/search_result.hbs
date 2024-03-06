@@ -1,0 +1,9 @@
+<h1>Search Result</h1>
+{{#if product}}
+    {{#each product}}
+        <p>Product ID: {{asin}}</p>
+        <p>Product Title: {{title}}</p>
+    {{/each}}
+{{else}}
+    <p>No product found</p>
+{{/if}}

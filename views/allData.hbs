@@ -1,0 +1,24 @@
+<h1>{{title}}</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product ID</th>
+      <th>Title</th>
+      <th>Reviews</th>
+      <!-- Add more columns as needed -->
+    </tr>
+  </thead>
+  <tbody>
+    {{#each products}}
+      {{#if reviews}}
+        <tr>
+          <td>{{asin}}</td>
+          <td>{{title}}</td>
+          <td>{{reviews}}</td>
+          <!-- Add more columns as needed -->
+        </tr>
+      {{/if}}
+    {{/each}}
+  </tbody>
+</table>

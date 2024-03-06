@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.container {
+    min-height: 80%;
+}
+header,
+footer {
+    background-color: #808080;
+    color: white;
+    padding: 10px;
+}
+
+header p,
+footer {
+    margin: 5px 0;
+}
+
+/* CSS for highlighting rows */
+.highlighted {
+    background-color: yellow;
+}
